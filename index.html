@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HK Toddler Play &amp; Education Guide</title>
+<style>
+  :root {
+    --bg: #f3efe3;
+    --surface: #ffffff;
+    --surface-2: #eae2cd;
+    --ink: #202b2a;
+    --ink-soft: #57645f;
+    --line: #d9cfb2;
+    --accent: #0e6f68;
+    --accent-ink: #ffffff;
+    --accent-soft: #dcece9;
+    --free: #2f7a4f;
+    --free-soft: #e2f0e3;
+    --urgent: #b23b2e;
+    --urgent-soft: #f7e0dc;
+    --verify: #9a6b0c;
+    --verify-soft: #f4e8ce;
+    --focus: #0e6f68;
+    --shadow: 0 1px 2px rgba(32,43,42,.08), 0 4px 14px rgba(32,43,42,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161b1a;
+      --surface: #1f2624;
+      --surface-2: #283330;
+      --ink: #ece7d9;
+      --ink-soft: #a9b3ac;
+      --line: #3a453f;
+      --accent: #4fb6ac;
+      --accent-ink: #0d1615;
+      --accent-soft: #223b38;
+      --free: #6cc38f;
+      --free-soft: #1e3327;
+      --urgent: #e8897d;
+      --urgent-soft: #3a2521;
+      --verify: #e0b158;
+      --verify-soft: #3a3020;
+      --focus: #4fb6ac;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161b1a; --surface: #1f2624; --surface-2: #283330; --ink: #ece7d9; --ink-soft: #a9b3ac;
+    --line: #3a453f; --accent: #4fb6ac; --accent-ink: #0d1615; --accent-soft: #223b38;
+    --free: #6cc38f; --free-soft: #1e3327; --urgent: #e8897d; --urgent-soft: #3a2521;
+    --verify: #e0b158; --verify-soft: #3a3020; --focus: #4fb6ac;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"] {
+    --bg: #f3efe3; --surface: #ffffff; --surface-2: #eae2cd; --ink: #202b2a; --ink-soft: #57645f;
+    --line: #d9cfb2; --accent: #0e6f68; --accent-ink: #ffffff; --accent-soft: #dcece9;
+    --free: #2f7a4f; --free-soft: #e2f0e3; --urgent: #b23b2e; --urgent-soft: #f7e0dc;
+    --verify: #9a6b0c; --verify-soft: #f4e8ce; --focus: #0e6f68;
+    --shadow: 0 1px 2px rgba(32,43,42,.08), 0 4px 14px rgba(32,43,42,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { overflow-x: hidden; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { text-wrap: balance; font-weight: 700; margin: 0 0 .4em; }
+  p { margin: 0 0 1em; }
+  a { color: var(--accent); text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+  .num, td.num { font-variant-numeric: tabular-nums; }
+  .prose { max-width: 65ch; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 .5em;
+  }
+
+  .page-header {
+    padding: 2rem 1.25rem 1.25rem;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .page-header h1 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+  .age-banner {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: .5rem .9rem;
+    border-radius: .5rem;
+    font-weight: 600;
+    font-size: .95rem;
+    margin-top: .5rem;
+  }
+
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: .25rem;
+    overflow-x: auto;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: .6rem 1rem;
+    scrollbar-width: thin;
+  }
+  .tab-btn {
+    flex: 0 0 auto;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-weight: 600;
+    font-size: .88rem;
+    padding: .55rem .9rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { background: var(--surface-2); color: var(--ink); }
+  .tab-btn[aria-selected="true"] {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  main { max-width: 920px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .tab-panel > h2 { font-size: 1.4rem; }
+  .section-intro { color: var(--ink-soft); }
+
+  .callout {
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    background: var(--surface);
+    border-radius: .4rem;
+    padding: .9rem 1.1rem;
+    margin: 1rem 0;
+  }
+  .callout h3 { font-size: .95rem; margin-bottom: .3em; }
+  .callout.urgent { border-left-color: var(--urgent); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .chip-groups { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; margin: 1rem 0; }
+  .chip-group { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+  .chip-group-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); margin-right: .3rem; }
+  .chip {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font: inherit;
+    font-size: .82rem;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: .6rem;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+  .card h4 { font-size: 1rem; }
+  .card .meta { font-size: .76rem; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: .4rem; }
+  .card .desc { font-size: .88rem; color: var(--ink); flex-grow: 1; }
+  .card .card-link { font-size: .82rem; }
+
+  .pill { display: inline-block; padding: .12rem .55rem; border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .02em; }
+  .pill-free { background: var(--free-soft); color: var(--free); }
+  .pill-paid { background: var(--surface-2); color: var(--ink-soft); }
+  .badge-verify { background: var(--verify-soft); color: var(--verify); border-radius: 999px; padding: .12rem .55rem; font-size: .7rem; font-weight: 700; }
+  .badge-urgent { background: var(--urgent); color: #fff; border-radius: 999px; padding: .15rem .6rem; font-size: .72rem; font-weight: 800; letter-spacing: .04em; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: .5rem; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: .86rem; }
+  caption { caption-side: top; text-align: left; font-size: .8rem; color: var(--ink-soft); padding: .6rem .8rem 0; }
+  th, td { text-align: left; padding: .65rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--surface-2); font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); position: sticky; top: 0; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--surface-2); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; }
+  @media (min-width: 720px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
+  .compare-col { background: var(--surface); border: 1px solid var(--line); border-radius: .6rem; padding: 1.1rem; }
+  .compare-col h3 { color: var(--accent); font-size: 1.05rem; }
+  .compare-col dl { margin: 0; }
+  .compare-col dt { font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); margin-top: .8rem; }
+  .compare-col dt:first-child { margin-top: 0; }
+  .compare-col dd { margin: .2em 0 0; }
+
+  .timeline { list-style: none; margin: 1.5rem 0; padding: 0; border-left: 2px solid var(--line); }
+  .timeline-item { position: relative; padding: 0 0 1.75rem 1.5rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: .3rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--ink-soft);
+  }
+  .timeline-item.is-current::before { background: var(--accent); border-color: var(--accent); }
+  .timeline-item.is-past { opacity: .6; }
+  .timeline-date { font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-weight: 700; }
+  .timeline-item.is-current .timeline-date { color: var(--accent); }
+  .timeline-item h3 { font-size: 1.02rem; margin: .2em 0 .3em; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .timeline-item p { margin: 0; font-size: .9rem; color: var(--ink-soft); max-width: 60ch; }
+
+  .highlight-box { background: var(--free-soft); border: 1px solid var(--free); border-radius: .5rem; padding: .9rem 1.1rem; margin: 1rem 0; }
+  .highlight-box h3 { color: var(--free); font-size: .95rem; }
+
+  footer.page-footer { max-width: 920px; margin: 0 auto; padding: 1rem 1.25rem 3rem; color: var(--ink-soft); font-size: .78rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .tab-btn, .chip { transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <p class="eyebrow">Hong Kong &middot; Born June 2025</p>
+  <h1>Toddler Play &amp; Education Guide</h1>
+  <p class="section-intro prose">A working reference for play, playgroups, and the kindergarten pipeline &mdash; built from primary-source research, kept up to date as the child grows. Every price is dated; anything unverified is flagged.</p>
+  <p class="age-banner" id="age-banner">Calculating age&hellip;</p>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Guide sections">
+  <button type="button" class="tab-btn" data-tab="play" aria-selected="true">Play Now</button>
+  <button type="button" class="tab-btn" data-tab="playgroups" aria-selected="false">Playgroups</button>
+  <button type="button" class="tab-btn" data-tab="decision" aria-selected="false">Education: The Decision</button>
+  <button type="button" class="tab-btn" data-tab="timeline" aria-selected="false">Timeline</button>
+  <button type="button" class="tab-btn" data-tab="directory" aria-selected="false">Schools Directory</button>
+</nav>
+
+<main>
+
+  <!-- ================= PLAY NOW ================= -->
+  <section id="tab-play" class="tab-panel active" aria-labelledby="play-h">
+    <h2 id="play-h">Play Now (12&ndash;24 months)</h2>
+    <p class="section-intro prose">Indoor playrooms, free parks, classes, and free-for-under-3 attractions, filterable by price, setting, and district.</p>
+
+    <div class="callout urgent">
+      <h3>Rainy-day / typhoon shortlist</h3>
+      <p>Rainy season runs Apr&ndash;Sep (June worst for rainstorm warnings); typhoon season peaks Jul&ndash;Sep. Air-conditioned fallback: <strong>Baumhaus / EpicLand / Kiztopia</strong> indoor playrooms, <strong>HK Science Museum</strong> (under-4 free), <strong>Central Library Toy Library</strong>, indoor heated pools with water playgrounds (e.g. Sai Wan Ho), and the Hopewell Centre kids' floor (Wan Chai). Best outdoor season is roughly Oct&ndash;Mar. Source: <a href="https://www.discoverhongkong.com/eng/explore/attractions/family-friendly-indoor-activities-for-summer.html">HKTB rainy-day guide</a>.</p>
+    </div>
+
+    <div class="callout">
+      <h3>Free under age 3</h3>
+      <p><strong>Ocean Park</strong> and <strong>Hong Kong Disneyland</strong>: children under 3 get free admission (adult ticket still needed) &mdash; the entire 13&ndash;24mo window qualifies. <strong>HK Science Museum</strong>: children under 4 free (adult HK$25). <strong>LCSD public pools</strong>: under-3 free. Sources: <a href="https://www.oceanpark.com.hk/en/tickets-and-offers/buy-tickets">Ocean Park tickets</a>, <a href="https://www.hongkongdisneyland.com/faq/park/visiting-with-young-children/">Disneyland FAQ</a>.</p>
+    </div>
+
+    <div class="chip-groups" role="group" aria-label="Filter activities">
+      <div class="chip-group" data-group="price">
+        <span class="chip-group-label">Price</span>
+        <button type="button" class="chip" data-group="price" data-value="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-group="price" data-value="Free" aria-pressed="false">Free</button>
+        <button type="button" class="chip" data-group="price" data-value="Paid" aria-pressed="false">Paid</button>
+      </div>
+      <div class="chip-group" data-group="setting">
+        <span class="chip-group-label">Setting</span>
+        <button type="button" class="chip" data-group="setting" data-value="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-group="setting" data-value="Indoor" aria-pressed="false">Indoor</button>
+        <button type="button" class="chip" data-group="setting" data-value="Outdoor" aria-pressed="false">Outdoor</button>
+      </div>
+      <div class="chip-group" data-group="district">
+        <span class="chip-group-label">District</span>
+        <button type="button" class="chip" data-group="district" data-value="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-group="district" data-value="HKI" aria-pressed="false">HK Island</button>
+        <button type="button" class="chip" data-group="district" data-value="KLN" aria-pressed="false">Kowloon</button>
+        <button type="button" class="chip" data-group="district" data-value="NT" aria-pressed="false">New Territories</button>
+        <button type="button" class="chip" data-group="district" data-value="Multiple" aria-pressed="false">Multiple</button>
+      </div>
+    </div>
+
+    <p id="play-count" class="section-intro" style="font-size:.82rem;"></p>
+    <div class="card-grid" id="activity-grid"></div>
+
+    <div class="callout" style="border-left-color: var(--verify);">
+      <h3>Unlocks at 18 &amp; 24 months</h3>
+      <p><strong>At 18 months:</strong> Spring Learning Supersport (18mo&ndash;3.5yr, 15+ sports); Flipping Kids gymnastics "Tiny Tots" (from 18mo); Ocean Park "Art &amp; Sensory Play" (1.5&ndash;3yr). The Little Gym's Birds class (10&ndash;19mo) also steps up around 19mo.</p>
+      <p><strong>Around 20&ndash;24 months:</strong> YWCA gymnastics/trampoline (from 20mo); bigger playground structures become age-appropriate &mdash; Sham Shui Po Park's long slide, Kowloon Park's Discovery Playground climbing frames. LCSD indoor play rooms are built for ages 4&ndash;9 (usable earlier only with a parent) &mdash; full independent value is still years away.</p>
+    </div>
+  </section>
+
+  <!-- ================= PLAYGROUPS ================= -->
+  <section id="tab-playgroups" class="tab-panel" aria-labelledby="pg-h">
+    <h2 id="pg-h">Playgroups</h2>
+    <p class="section-intro prose">Most playgroups at 13&ndash;24 months are parent-accompanied. Prices change often &mdash; confirm directly before enrolling.</p>
+
+    <div class="callout urgent">
+      <h3>Victoria Playpark: no admissions priority</h3>
+      <p>Victoria Playpark's own FAQ states students receive <strong>no priority admission</strong> to VEO kindergartens &mdash; everyone follows the same procedure and admission isn't guaranteed. The benefit is familiarity with VEO's trilingual/inquiry style, not a queue-jump. Source: <a href="https://www.victoriaplaypark.com/faq/">victoriaplaypark.com/faq</a>.</p>
+    </div>
+
+    <div class="callout">
+      <h3>The "feeder" reality</h3>
+      <p>Schools with a full playgroup&rarr;pre-nursery&rarr;kindergarten pathway often give their own playgroup graduates priority or an interview bypass (e.g. after 3+ months at the affiliated playgroup) &mdash; but this is <strong>case-by-case</strong>, not universal (Victoria explicitly does not). Playgroup-only centres are not EDB-regulated; pre-nursery/kindergartens must be. Verify per school. Sources: <a href="https://www.letsgethome.com/en/blog/choosing-between-playgroup-and-pre-nursery-in-hong-kong">letsgethome.com</a>, <a href="https://www.mightyoaks.edu.hk/admission">Mighty Oaks Acorn</a>.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Major providers, territory-wide</caption>
+        <thead>
+          <tr><th>Provider</th><th>Locations</th><th>Language</th><th>Philosophy</th><th>Accompanied?</th><th>Price (HK$)</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.victoriaplaypark.com/">Victoria Playpark</a></td>
+            <td>Wan Chai; TST (K11 MUSEA)</td>
+            <td>Trilingual: Eng / Putonghua / Cantonese</td>
+            <td>Play- &amp; inquiry-based (VEO-aligned)</td>
+            <td>Accompanied at younger ages</td>
+            <td class="num">From ~$623/lesson <span class="badge-verify">verify tier</span>; drop-in $180</td>
+            <td>No VEO admissions priority (see callout)</td>
+          </tr>
+          <tr>
+            <td><a href="https://guidepost.hk/">Guidepost Montessori</a> (ex-Woodland, 2024)</td>
+            <td>Chai Wan, Clearwater Bay, Happy Valley, Kennedy Town, Mid-Levels, Pok Fu Lam, Repulse Bay, Sai Kung</td>
+            <td>English (Montessori); some bilingual</td>
+            <td>Montessori</td>
+            <td>Montessori Together (0&ndash;18mo) accompanied; <strong>Nido (1&ndash;2yr) unaccompanied</strong></td>
+            <td class="num">Montessori Together $470/class; Nido 3d/wk from $8,400&ndash;13,000/mo; 5d/wk $11,500&ndash;17,200/mo (KT, 2025/26); admin fee $1,500</td>
+            <td>Three former Woodland campuses rebranded &mdash; verify which entity operates each site</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.tutortime.com.hk/our-programs/wow-activity-group/">Tutor Time (WOW Activity Group)</a></td>
+            <td>Central, North Point, Yuen Long, Kowloon Tong</td>
+            <td>50% English / 50% Mandarin immersion</td>
+            <td>Structured learning + free play</td>
+            <td>Infant 6&ndash;12mo, Toddler 12&ndash;24mo</td>
+            <td><span class="badge-verify">not published &mdash; contact directly</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><a href="https://mulberryhousekg.com/en/">Mulberry House</a></td>
+            <td>Pak Shek Kok (Tai Po); Southside (HK Island)</td>
+            <td>Bilingual (Eng + Mandarin, verify)</td>
+            <td>Inquiry-based, UK EYFS</td>
+            <td>Pre-nursery supports first separation steps</td>
+            <td><span class="badge-verify">not found &mdash; contact directly</span></td>
+            <td>Distinct from "Mulberry Tree Academy" and "Mulberry House Academy"</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.baumhaus.com.hk/">Baumhaus</a></td>
+            <td>Wan Chai, HK Island</td>
+            <td>English (music-based)</td>
+            <td>Kindermusik "purposeful creative play"</td>
+            <td>Accompanied family centre</td>
+            <td><span class="badge-verify">not found &mdash; contact directly</span></td>
+            <td>Not Reggio, despite some listings</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.esfexplore.org.hk/programmes/esf-playgroup/">ESF Explore Playgroups</a></td>
+            <td>Multiple ESF campuses + Language &amp; Learning Centre, Wan Chai; Tung Chung</td>
+            <td>English</td>
+            <td>UK EYFS, theme-based</td>
+            <td>Progressive levels 6&ndash;12mo / 12&ndash;18mo / 18&ndash;30mo</td>
+            <td class="num">Trial $300 single / $500&ndash;800 (2 sessions); term <span class="badge-verify">$2,000&ndash;4,500 range unconfirmed</span></td>
+            <td>5% trial discount code ESF_SM5 to 31 Aug 2026</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.ymcahk.org.hk/pples/en/our_programmes/playgroups/toddlers_world/index.html">YMCA</a> / <a href="https://clle.ywca.org.hk/Common/Reader/Channel/ShowPage.jsp?Cid=2120&amp;Pid=101">YWCA</a></td>
+            <td>Multiple centres</td>
+            <td>English and/or Cantonese</td>
+            <td>Whole-child, kindergarten-prep</td>
+            <td>Parents &amp; Toddlers accompanied, ~1.5&ndash;3yr</td>
+            <td><span class="badge-verify">not itemised &mdash; generally cheaper NGO rates</span></td>
+            <td>Lower-cost than commercial centres</td>
+          </tr>
+          <tr>
+            <td><a href="https://spring-learning.com.hk/en/">SPRING Learning</a></td>
+            <td>Centre Point, Wan Chai</td>
+            <td>English (bilingual options, verify)</td>
+            <td>Play-based; KindyRoo, Supersport, Sensory, Cooking</td>
+            <td>Playgroup, 0&ndash;6yr</td>
+            <td><span class="badge-verify">see site fee schedule</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><a href="https://littlehabs.com/">Learning Habitat (Little Habs)</a></td>
+            <td>Tai Kok Tsui, Kowloon</td>
+            <td>Bilingual</td>
+            <td>Play-based bilingual</td>
+            <td>Wibble Wobble (younger toddlers), Bubble Bobble (motor skills)</td>
+            <td><span class="badge-verify">not found &mdash; contact directly</span></td>
+            <td>Bilingual pre-primary operator since 2000</td>
+          </tr>
+          <tr>
+            <td>Rightmind</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><span class="badge-verify">unconfirmed &mdash; needs dedicated lookup</span></td>
+            <td>Mentioned in parent forums only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Cheap &amp; community options</h3>
+      <ul class="prose">
+        <li><strong>St John's Cathedral Parent &amp; Toddler Playgroup</strong> &mdash; ~HK$20, Thu 2:30&ndash;4:30pm, Fanny Li Hall, Central; up to age 2; volunteer-led, one of HK's longest-running English playgroups. <a href="https://www.stjohnscathedral.org.hk/Page.aspx?lang=1&amp;id=74">Details</a>.</li>
+        <li><strong>PlayDays @ Methodist International Church</strong>, Wan Chai &mdash; three mornings/week, non-religious, snack provided. <a href="https://www.michk.com/playdays">Details</a>.</li>
+        <li><strong>Lifehouse International Church</strong>, Mong Kok &mdash; donation HK$30&ndash;40.</li>
+        <li><strong>USRC Jordan playgroup</strong> &mdash; members + non-members, outdoor grassy space.</li>
+        <li><strong>Heep Hong Society</strong> &mdash; NGO, ~70% government/Community Chest funded; Music Therapy &amp; Versatile-kid playgroups; strongest option if there's any developmental concern. <a href="https://www.heephong.org/eng/child-development-and-training/useful-advice/playgroup">Details</a>.</li>
+      </ul>
+      <p style="margin-bottom:0;">There is no formal EDB voucher for playgroups under 2 &mdash; the Kindergarten Education Scheme applies from K1/age 3. Affordable routes below that are NGO or church/community.</p>
+    </div>
+  </section>
+
+  <!-- ================= DECISION ================= -->
+  <section id="tab-decision" class="tab-panel" aria-labelledby="dec-h">
+    <h2 id="dec-h">Education: The Decision</h2>
+    <p class="section-intro prose">Local/bilingual vs. international kindergarten &mdash; cost, language, pathway to primary, and how easy it is to switch later.</p>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <h3>Local / bilingual track</h3>
+        <dl>
+          <dt>Annual cost</dt>
+          <dd>KES-subsidised half-day: tuition often free + ~HK$200&ndash;500/month misc fees. Whole-day/long full-day: subsidy doesn't fully cover, top-up likely. Non-KES private local: ~HK$2,000&ndash;6,000/month. <span class="badge-verify">exact 2025/26 KES rates unconfirmed</span></dd>
+          <dt>Language</dt>
+          <dd>Cantonese-first, plus Putonghua and English at bilingual schools.</dd>
+          <dt>Pathway to primary</dt>
+          <dd>Government/aided P1 places via <strong>POA</strong> (Primary One Admission): Discretionary Places stage (1 school; auto-in for siblings/staff, else points), then Central Allocation (school-net based, part choice/part random). Most local KGs are <strong>not</strong> linked to a specific primary &mdash; KG choice doesn't guarantee a P1 place. <span class="badge-verify">feeder links unconfirmed at school level</span></dd>
+          <dt>Flexibility to switch</dt>
+          <dd>Easiest early (PN/K1). Moving local&rarr;international later means competing for scarce mid-year seats and an English gap.</dd>
+        </dl>
+      </div>
+      <div class="compare-col">
+        <h3>International track</h3>
+        <dl>
+          <dt>Annual cost</dt>
+          <dd>~HK$50,000 to &gt;HK$200,000/year; a Tier-1 first year with one-off fees can exceed HK$230,000.</dd>
+          <dt>Language</dt>
+          <dd>English-dominant; some 50/50 English-Mandarin immersion models.</dd>
+          <dt>Pathway to primary</dt>
+          <dd>Outside POA &mdash; apply directly. ESF's new <strong>Associated Schools Model</strong> (from 2026) tells K1 families their linked primary and guarantees a Y1 place on completing K2 (must enrol before 1 Dec) &mdash; the strongest guaranteed pipeline found in this research. Victoria (VEO) &rarr; Victoria Shanghai Academy: 694 VEO grads got VSA offers AY2021/22&ndash;2024/25 (strong track record, not guaranteed). Malvern Pre-School &rarr; Malvern College HK Prep 1 after 2+ years (subject to admissions).</dd>
+          <dt>Flexibility to switch</dt>
+          <dd>International&rarr;local later means a Cantonese/Chinese-literacy gap to close.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>What is KES?</h3>
+      <p>The <strong>Kindergarten Education Scheme</strong> ("Free Quality Kindergarten Education") replaced the old voucher scheme in 2017/18. EDB pays the subsidy directly to eligible <strong>non-profit local</strong> kindergartens &mdash; about 730 KGs (~75% of all HK KGs) participate, across all 18 districts. Eligibility requires the child hold an HKID or valid student visa <span class="badge-verify">exact wording unconfirmed</span>. Fee remission for low-income families (KCFRS + Grant-KG) is available on top of KES via WFSFAA. Source: <a href="https://www.edb.gov.hk/en/edu-system/preprimary-kindergarten/free-quality-kg-edu/index.html">EDB KES overview</a>.</p>
+    </div>
+
+    <div class="callout">
+      <h3>Debentures &amp; capital levies, explained</h3>
+      <p>A <strong>debenture</strong> is a one-off lump sum for priority admission (can be corporate, nominating an employee's child, or individual/family-held, sometimes partially refundable). A <strong>capital levy</strong> is the annual alternative &mdash; non-refundable, may total the same or more over time. At the pre-school/nursery level, most schools do <strong>not</strong> require either.</p>
+      <p style="margin-bottom:0;">Examples found: ESF Individual Nomination Rights HK$500,000 (each, primary/secondary), kindergarten bond from HK$50,000 (converts to a Year 1 nomination right); Nord Anglia annual capital levy HK$35,000 for new students from 2026/27; Guidepost Montessori explicitly charges <strong>none</strong>. General market range for a capital levy: HK$25,000&ndash;45,000/year; debentures HK$25,000 (ESF-tier) up to millions at top primary/secondary schools.</p>
+    </div>
+  </section>
+
+  <!-- ================= TIMELINE ================= -->
+  <section id="tab-timeline" class="tab-panel" aria-labelledby="tl-h">
+    <h2 id="tl-h">Timeline</h2>
+    <p class="section-intro prose">Anchored to this child's actual dates (born June 2025). The filled dot marks where things stand today.</p>
+
+    <ol class="timeline" id="timeline-list">
+      <li class="timeline-item" data-date="2026-07-01">
+        <div class="timeline-date">Now &middot; July 2026</div>
+        <h3>Toddler is ~13 months old</h3>
+        <p>Focus on Play Now activities and start visiting/trialling playgroups to find a fit.</p>
+      </li>
+      <li class="timeline-item" data-date="2026-09-01">
+        <div class="timeline-date">Sept&ndash;Dec 2026</div>
+        <h3>PN / N1 applications open <span class="badge-urgent">Urgent</span></h3>
+        <p>Both local pre-nursery (e.g. Victoria opens its round ~1 year ahead) and international pre-nursery programmes open for <strong>Sept 2027 entry</strong>. Register early &mdash; several providers are first-come-first-served (e.g. PIPS' refundable $5,000 playgroup levy).</p>
+      </li>
+      <li class="timeline-item" data-date="2026-11-01">
+        <div class="timeline-date">November 2026</div>
+        <h3>Interviews / play assessments</h3>
+        <p>Rarely a formal 1-on-1 at this age &mdash; schools run play/activity carousels observing instruction-following, motor skills, and language. Parents are often briefly interviewed too.</p>
+      </li>
+      <li class="timeline-item" data-date="2027-09-01">
+        <div class="timeline-date">September 2027</div>
+        <h3>PN starts (age 2y3m)</h3>
+        <p>PN/N1 is <strong>optional</strong> and is not part of the EDB-regulated kindergarten curriculum &mdash; it does not materially affect K1 admission at most schools (Victoria explicitly grants no priority from it).</p>
+      </li>
+      <li class="timeline-item" data-date="2027-09-01">
+        <div class="timeline-date">1&ndash;30 September 2027</div>
+        <h3>ESF K1 application window <span class="badge-urgent">Fixed dates</span></h3>
+        <p>ESF's online K1 application window is fixed every year: opens 1 Sept, closes 30 Sept, for entry the following September (here, <strong>Sept 2028</strong>). Applications after 30 Sept go to a date-ordered waitlist tied to the first-preference school only.</p>
+      </li>
+      <li class="timeline-item" data-date="2027-10-01">
+        <div class="timeline-date">Autumn 2027 (Sept&ndash;Nov)</div>
+        <h3>Local K1 applications</h3>
+        <p>Apply for the EDB "Registration Certificate for Kindergarten Admission" (6&ndash;8 week processing) alongside school applications; interviews in November, results late Nov&ndash;early Dec, registration early-mid January.</p>
+      </li>
+      <li class="timeline-item" data-date="2028-09-01">
+        <div class="timeline-date">September 2028</div>
+        <h3>K1 starts (age 3y3m)</h3>
+        <p>This child, born June 2025, is eligible: the 2028/29 K1 cutoff requires birth on or before <strong>31 December 2025</strong>.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= DIRECTORY ================= -->
+  <section id="tab-directory" class="tab-panel" aria-labelledby="dir-h">
+    <h2 id="dir-h">Schools Directory</h2>
+    <p class="section-intro prose">Named pre-schools/kindergartens from research, local/bilingual and international. Fees are dated by academic year &mdash; always reconfirm.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Local &amp; bilingual</caption>
+        <thead>
+          <tr><th>School</th><th>Location(s)</th><th>Language / curriculum</th><th>Fees</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>St. Catherine's Int'l Kindergarten &amp; Nursery</td>
+            <td>Hung Hom (age 2&ndash;3); Kowloon Tong / Norfolk / Essex Cres (age 3&ndash;6)</td>
+            <td>Native English + Chinese teachers; strong English focus</td>
+            <td><span class="badge-verify">not published &mdash; contact school</span></td>
+            <td><a href="https://www.stcatherines.edu.hk/?lang=en">stcatherines.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Victoria (VEO / Victoria Educare / Victoria Kindergarten)</td>
+            <td>Many campuses: Causeway Bay, Homantin, South Horizons, Kornhill, Belcher, etc.</td>
+            <td>Bilingual Eng + Putonghua, play/inquiry-based; PN from ~1y10m</td>
+            <td class="num">Pre-Nursery ~$124,900/yr; K1/K2 ~$112,500/yr <span class="badge-verify">academic year unconfirmed</span></td>
+            <td><a href="https://www.victoria.edu.hk/application-procedure/">victoria.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Learning Habitat Kindergarten &amp; Bilingual Nursery</td>
+            <td>Multiple</td>
+            <td>CE (Cantonese+English) and PE (Putonghua+English) streams, ages 3&ndash;6</td>
+            <td><span class="badge-verify">not found &mdash; contact school</span></td>
+            <td><a href="https://www.learninghabitat.org/en">learninghabitat.org</a></td>
+          </tr>
+          <tr>
+            <td>Creative (&#21857;&#24605;) Primary School's Kindergarten</td>
+            <td>Multiple</td>
+            <td>Bilingual</td>
+            <td><span class="badge-verify">not found &mdash; contact school</span></td>
+            <td><a href="https://creative.edu.hk/en/admissions/">creative.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>York, Cannan, Kentville, SKH, Po Leung Kuk schools</td>
+            <td>Various</td>
+            <td>Mostly local/bilingual; well-known networks; SKH &amp; PLK run many KES kindergartens</td>
+            <td><span class="badge-verify">individual profiles not verified &mdash; check EDB KG Profile search</span></td>
+            <td><a href="https://applications.edb.gov.hk/schoolsearch/schoolsearch.aspx?langno=1">EDB school search</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption>International</caption>
+        <thead>
+          <tr><th>School</th><th>Location(s)</th><th>Language / curriculum</th><th>Fees</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ESF Kindergartens</td>
+            <td>6 campuses from 2026: Abacus, Hillside, Tsing Yi, Wu Kai Sha, Sai Sha (replacing Tung Chung), Kornhill, West Kowloon <span class="badge-verify">network in flux &mdash; verify live list</span></td>
+            <td>IB Primary Years Programme (PYP); English-medium</td>
+            <td class="num">$101,300&ndash;111,400/yr (2026/27); PN app fee $40; kindergarten bond from $50,000</td>
+            <td><a href="https://join-us.esf.edu.hk/admissions-kindergarten/">join-us.esf.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Woodland Pre-Schools</td>
+            <td>6 neighbourhoods: Sai Kung, Mid-Levels (Montessori campus), Repulse Bay, Pokfulam, Happy Valley + others</td>
+            <td>British EYFS, learn-through-play; English/Mandarin/bilingual; ages 6mo&ndash;6yr</td>
+            <td class="num">Accompanied classes $2,070&ndash;5,690/mo; Stepping Stones/pre-school $9,110&ndash;11,800/mo <span class="badge-verify">academic year unconfirmed</span></td>
+            <td><a href="https://www.woodlandschools.com/">woodlandschools.com</a></td>
+          </tr>
+          <tr>
+            <td>Guidepost Montessori</td>
+            <td>~13 locations incl. Causeway Bay, Chai Wan, Clearwater Bay, Discovery Bay, Kennedy Town, Mid-Levels, Sai Kung</td>
+            <td>Montessori; Nido (1&ndash;2y unaccompanied), Toddler (2&ndash;3y), Children's House (3&ndash;6y)</td>
+            <td class="num">~$112,680/yr (2025/26, varies by site); <strong>no levy/debenture</strong></td>
+            <td><a href="https://guidepost.hk/course-fees">guidepost.hk/course-fees</a></td>
+          </tr>
+          <tr>
+            <td>Mulberry House International Kindergarten</td>
+            <td>Central; Tai Po (Pak Shek Kok); Southside</td>
+            <td>EYFS, inquiry-based, English-Mandarin bilingual; ages 6mo&ndash;6yr</td>
+            <td class="num">Tai Po $92,400/yr half-day; Southside $118,560/yr half-day <span class="badge-verify">academic year unconfirmed</span></td>
+            <td><a href="https://mulberryhousekg.com/en/">mulberryhousekg.com</a></td>
+          </tr>
+          <tr>
+            <td>Malvern College Pre-School HK</td>
+            <td>Island West (Sai Ying Pun); Coronation Circle (West Kowloon)</td>
+            <td>EYFS; one of HK's first Forest-Beach School programmes; ages 2&ndash;5</td>
+            <td><span class="badge-verify">not captured &mdash; verify direct</span></td>
+            <td><a href="https://www.malverncollege.org.hk/mcps/">malverncollege.org.hk/mcps</a></td>
+          </tr>
+          <tr>
+            <td>Nord Anglia International School HK (Early Years)</td>
+            <td>Lam Tin, Kwun Tong</td>
+            <td>British / Nord Anglia adapted; nursery from age 3</td>
+            <td class="num">Nursery $114,000 AM / $81,000 PM; K lower $75,000, upper $81,000 (2025/26); app fee $3,000; acceptance $100,000; annual capital levy $35,000 from 2026/27</td>
+            <td><a href="https://www.nordangliaeducation.com/nais-hong-kong/admissions/tuition-fees">nordangliaeducation.com</a></td>
+          </tr>
+          <tr>
+            <td>Discovery Mind</td>
+            <td>Discovery Bay + Tung Chung</td>
+            <td>British EYFS, modified English + Mandarin; ages 15mo&ndash;6yr; feeds Discovery Mind Primary</td>
+            <td><span class="badge-verify">not published &mdash; contact centre</span></td>
+            <td><a href="https://discoverymind.edu.hk/kindergarten/">discoverymind.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Small World Christian Kindergarten</td>
+            <td>Mid-Levels (Borrett Rd)</td>
+            <td>International Early Years Curriculum (IEYC) + Biblical foundation; English-medium; K1/K2</td>
+            <td><span class="badge-verify">see 2025/26 fee schedule on site</span></td>
+            <td><a href="https://smallworld.edu.hk/admission/">smallworld.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Highgate House School</td>
+            <td>The Peak</td>
+            <td>Play-based, child-led, English-medium; large garden/forest-style outdoor space</td>
+            <td><span class="badge-verify">not captured &mdash; verify direct</span></td>
+            <td>verify via school directly</td>
+          </tr>
+          <tr>
+            <td>Tutor Time International Nursery &amp; Kindergarten</td>
+            <td>North Point, Mid-Levels, Yuen Long, Kowloon Tong</td>
+            <td>British-based; bilingual English-Mandarin 50/50 immersion; STEAM; ages 3mo&ndash;6yr</td>
+            <td><span class="badge-verify">not published &mdash; by campus, on request</span></td>
+            <td><a href="https://www.tutortime.com.hk/locations/">tutortime.com.hk</a></td>
+          </tr>
+          <tr>
+            <td>International Montessori School (IMS)</td>
+            <td>Stanley, Mid-Levels, South Horizons, Aldrich Bay</td>
+            <td>Bilingual English-Chinese Montessori; ages 1&ndash;14</td>
+            <td><span class="badge-verify">not captured &mdash; verify direct</span></td>
+            <td><a href="https://www.ims.edu.hk/en">ims.edu.hk</a></td>
+          </tr>
+          <tr>
+            <td>Island Children's Montessori (ICMS)</td>
+            <td>&mdash;</td>
+            <td>Montessori; Pre-Casa age 2&ndash;3</td>
+            <td><span class="badge-verify">not captured &mdash; verify direct</span></td>
+            <td><a href="https://icms.edu.hk/">icms.edu.hk</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h3>Pathway to primary, school by school</h3>
+      <p style="margin-bottom:0;"><strong>ESF</strong>: new Associated Schools Model (from 2026) &mdash; guaranteed Y1 place on completing K2, must enrol before 1 Dec. <strong>Victoria (VEO)</strong> &rarr; Victoria Shanghai Academy: strong track record, not automatic. <strong>Malvern Pre-School</strong> &rarr; Malvern College HK Prep 1 after 2+ consecutive years, subject to admissions. <strong>Discovery Mind</strong> &rarr; Discovery Mind Primary School. <strong>Nord Anglia</strong> continues within NAIS (through-school). <strong>Woodland</strong>: pre-school only, no own primary, feeds a range of international primaries &mdash; no guaranteed pathway.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <p>Compiled from research dated 2026-07-05. Prices and application windows change &mdash; always confirm with the provider before acting. This page runs entirely offline: no external scripts, fonts, or trackers.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- Age banner ----
+  var BIRTH = new Date(2025, 5, 1); // 1 June 2025 (approx, per research)
+  function monthsBetween(from, to) {
+    var months = (to.getFullYear() - from.getFullYear()) * 12 + (to.getMonth() - from.getMonth());
+    if (to.getDate() < from.getDate()) months -= 1;
+    return Math.max(months, 0);
+  }
+  var ageBanner = document.getElementById("age-banner");
+  var ageMonths = monthsBetween(BIRTH, new Date());
+  ageBanner.textContent = "Your toddler is " + ageMonths + " months old today.";
+
+  // ---- Tabs ----
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = btn.getAttribute("data-tab");
+      tabButtons.forEach(function (b) { b.setAttribute("aria-selected", String(b === btn)); });
+      panels.forEach(function (p) { p.classList.toggle("active", p.id === "tab-" + target); });
+    });
+  });
+
+  // ---- Activities data (Play Now) ----
+  var activities = [
+    { name: "Baumhaus", district: "HKI", setting: "Indoor", price: "Paid", age: "6mo–4yr", desc: "2,700 sq ft playroom, designed for babies/toddlers.", note: "~$100–120 first child + $60 sibling — verify current", link: "https://www.baumhaus.com.hk/" },
+    { name: "EpicLand Kai Tak", district: "KLN", setting: "Indoor", price: "Paid", age: "1–6yr", desc: "14,000 sq ft Play Zone at Kai Tak Sports Park retail mall.", note: "exact price not found — check site", link: "https://www.epiclandhk.com/" },
+    { name: "EpicLand Discovery Bay", district: "NT", setting: "Indoor", price: "Paid", age: "1–6yr", desc: "Sister branch at Discovery Bay.", note: "exact price not found — check site", link: "https://www.littlestepsasia.com/hong-kong/play/indoor-activities/epicland-discovery-bay/" },
+    { name: "Kiztopia", district: "HKI", setting: "Indoor", price: "Paid", age: "Toddler zones", desc: "Largest indoor play centre in HK, 18 zones, Hopewell Mall.", note: "price not found — check site", link: "https://www.sassymamahk.com/best-indoor-play-centres-hong-kong-parties-play/" },
+    { name: "WHIMSY", district: "HKI", setting: "Indoor", price: "Paid", age: "Toddler zones", desc: "Snow-zone play floor at Hopewell Centre, Wan Chai.", note: "price not found — check site", link: "https://www.sassymamahk.com/best-indoor-play-centres-hong-kong-parties-play/" },
+    { name: "LEGOLAND Discovery Centre", district: "KLN", setting: "Indoor", price: "Paid", age: "3yr+ (limited value under 2)", desc: "Brick-themed attraction near TST.", note: null, link: "https://www.legolanddiscoverycentre.com/hong-kong/en/" },
+    { name: "LCSD indoor children's play rooms", district: "Multiple", setting: "Indoor", price: "Free", age: "Built for 4–9; under-4 with parent", desc: "Free themed play rooms in sports centres (sky, castle, circus themes). Book via SmartPLAY.", note: "not the ideal fit for a young toddler, but usable with a parent", link: "https://www.lcsd.gov.hk/clpss/en/webApp/Facility/Details.do?ftid=15&did=1" },
+    { name: "Public library toddler storytime", district: "Multiple", setting: "Indoor", price: "Free", age: "Varies by branch", desc: "Free storytelling extension activities at HK Public Libraries.", note: "many sessions target 3+ — verify a branch runs baby/toddler sessions", link: "https://www.hkpl.gov.hk/en/extension-activities/event-category/39441/storytelling-for-children" },
+    { name: "HK Central Library Toy Library", district: "HKI", setting: "Indoor", price: "Free", age: "All toddlers", desc: "Babycare room, children's multimedia room, and toy library, Causeway Bay.", note: null, link: "https://www.hkpl.gov.hk/en/about-us/HKCL/services/toy.html" },
+    { name: "Hong Kong Park playground", district: "HKI", setting: "Outdoor", price: "Free", age: "Dedicated toddler area", desc: "1,000 sq m playground with sandpit, Central.", note: null, link: "https://www.sassymamahk.com/best-outdoor-playgrounds-and-parks-in-hong-kong/" },
+    { name: "Kowloon Park", district: "KLN", setting: "Outdoor", price: "Free", age: "Bird Lake good for 1yr+; playground rated 2–5yr", desc: "Discovery Playground, safety-matted Children's Playground, Bird Lake with flamingos, TST.", note: null, link: "https://www.littlestepsasia.com/hong-kong/play/outdoor-activities/kowloon-park-in-tst/" },
+    { name: "Tamar Park", district: "HKI", setting: "Outdoor", price: "Free", age: "All toddlers", desc: "Open lawns and harbour front, Admiralty.", note: null, link: "https://www.sassymamahk.com/best-outdoor-playgrounds-and-parks-in-hong-kong/" },
+    { name: "Sai Ying Pun Waterfront Park", district: "HKI", setting: "Outdoor", price: "Free", age: "Better for older toddler", desc: "Water + sand play, inflatable bouncing zone — first on Victoria Harbourfront.", note: null, link: "https://www.littlestepsasia.com/hong-kong/play/outdoor-activities/best-outdoor-playgrounds/" },
+    { name: "Sham Shui Po Park", district: "KLN", setting: "Outdoor", price: "Free", age: "Long slide suits older toddler+", desc: "6,400 sq m, 3 nature-themed zones, sand pit, HK's longest slide.", note: null, link: "https://www.littlestepsasia.com/hong-kong/play/outdoor-activities/best-outdoor-playgrounds/" },
+    { name: "Quarry Bay Park", district: "HKI", setting: "Outdoor", price: "Free", age: "All toddlers", desc: "Revamped ocean-theme playground, HK Island East.", note: null, link: "https://www.littlestepsasia.com/hong-kong/play/outdoor-activities/best-outdoor-playgrounds/" },
+    { name: "HK Science Museum", district: "KLN", setting: "Indoor", price: "Free", age: "Under 4 free", desc: "Children's Gallery (3/F): padded play, tunnels, ball mazes, bubble hoops.", note: "adult ticket HK$25; child under 4 free", link: "https://www.littlestepsasia.com/hong-kong/play/indoor-activities/hong-kong-science-museum/" },
+    { name: "HK Wetland Park", district: "NT", setting: "Outdoor", price: "Paid", age: "All toddlers", desc: "61-hectare park, Tin Shui Wai; mudskippers, crabs, butterflies, Pui Pui the crocodile.", note: "exact admission + under-3 policy unconfirmed — verify on ticketing page", link: "https://www.wetlandpark.gov.hk/en/information/facilities-family-page" },
+    { name: "Ocean Park", district: "HKI", setting: "Outdoor", price: "Free", age: "Under 3 free admission", desc: "Animal encounters suit young toddlers better than rides.", note: "free only under 3; adult ticket still needed", link: "https://www.oceanpark.com.hk/en/tickets-and-offers/buy-tickets" },
+    { name: "Hong Kong Disneyland", district: "NT", setting: "Outdoor", price: "Free", age: "Under 3 free admission", desc: "Parades and characters suit young toddlers; no pass needed with accompanying adult.", note: "free only under 3; adult ticket still needed", link: "https://www.hongkongdisneyland.com/faq/park/visiting-with-young-children/" },
+    { name: "Public swimming pools (LCSD)", district: "Multiple", setting: "Indoor", price: "Free", age: "Under 3 free", desc: "Indoor heated pools (e.g. Sai Wan Ho) have water playgrounds — good rainy/hot-day option.", note: "adult $17 weekday, child 3–13 $8, under-3 free", link: "https://www.littlestepsasia.com/hong-kong/play/indoor-activities/indoor-activities-kids/" },
+    { name: "Acqua / Aqua Baby (Parkview)", district: "HKI", setting: "Indoor", price: "Paid", age: "Accompanied swim", desc: "Tue+Thu 10–10:45am parent-and-baby swim.", note: "$1,816 members / $2,016 non-members per term", link: "https://www.sassymamahk.com/sassy-mamas-guide-to-baby-classes-in-hong-kong-swimming-yoga-music-and-more/" },
+    { name: "Harry Wright Infant Aquatics", district: "Multiple", setting: "Indoor", price: "Paid", age: "Accompanied swim", desc: "Infant aquatics programme.", note: "from $765/month", link: "https://www.sassymamahk.com/sassy-mamas-guide-to-baby-classes-in-hong-kong-swimming-yoga-music-and-more/" },
+    { name: "Alison Tam Swimming", district: "HKI", setting: "Indoor", price: "Paid", age: "4mo–3yr", desc: "Adult-accompanied 30-min classes, Kennedy Town / JCC / West Island School.", note: null, link: "https://www.alisontamswimming.com/babytoddler" },
+    { name: "ESF Explore Swimming Baby & Me", district: "Multiple", setting: "Indoor", price: "Paid", age: "Level 1", desc: "Parent-and-baby swim programme.", note: "price not captured — see site", link: "https://www.esfexplore.org.hk/programmes/swimming-baby-me-level-1-sw0b/" },
+    { name: "Yoga4Baby", district: "Multiple", setting: "Indoor", price: "Paid", age: "Water/yoga", desc: "Parent-and-baby water yoga sessions.", note: "$190 drop-in / $720 for 4", link: null },
+    { name: "Kindermusik Village", district: "Multiple", setting: "Indoor", price: "Paid", age: "Babies + toddlers", desc: "Music-based development classes.", note: "$3,750 for 15 weeks, incl. materials", link: null },
+    { name: "KiddiPlay (KiddiKraft)", district: "Multiple", setting: "Indoor", price: "Paid", age: "12–18mo", desc: "Speech/language/motor-focused class.", note: "$250/class", link: null },
+    { name: "The Little Gym", district: "KLN", setting: "Indoor", price: "Paid", age: "Birds 10–19mo", desc: "Parent-child movement classes, steps up around 19mo.", note: "contact for rates", link: "https://www.thelittlegym.com/hong-kong/" },
+    { name: "Our Gym", district: "Multiple", setting: "Indoor", price: "Paid", age: "6wk–3yr", desc: "Rockers (music/rhythm), Gigglers (tumbling/balancing).", note: "contact for pricing", link: null },
+    { name: "ProGym (ProActiv Sports)", district: "Multiple", setting: "Indoor", price: "Paid", age: "From 12mo, parent-assisted", desc: "Movement and gym class.", note: null, link: "https://www.littlestepsasia.com/hong-kong/learn/playgroups/best-baby-gyms-and-classes/" },
+    { name: "Little Nature Wanderlust", district: "Multiple", setting: "Indoor", price: "Paid", age: "6mo–4yr", desc: "Reggio-inspired edible sensory + process art, 1-hr sessions.", note: null, link: "https://www.littlenaturewanderlust.com" },
+    { name: "Teddy Bear Club", district: "Multiple", setting: "Indoor", price: "Paid", age: "Walkers ~1–2yr", desc: "Sitters/Cruisers, Walkers, Walkers & Jumpers sensory classes.", note: "Walkers & Jumpers $2,120/term", link: "https://www.littlestepsasia.com/hong-kong/learn/playgroups/sensory-play/" },
+    { name: "Trybe Playgroup", district: "Multiple", setting: "Indoor", price: "Paid", age: "Toddler", desc: "Weekly sensory/play sessions.", note: "$325/week per term; trial $350", link: null },
+    { name: "PIP", district: "Multiple", setting: "Indoor", price: "Paid", age: "Toddler", desc: "75-min classes: movement + sensory + baby massage.", note: null, link: null },
+    { name: "SensationalBaby", district: "Multiple", setting: "Indoor", price: "Paid", age: "Toddler", desc: "Sensory play sessions.", note: "$220 drop-in / $1,100 for 5 weeks", link: null },
+    { name: "Casita / Spring Learning Neurosense", district: "HKI", setting: "Indoor", price: "Paid", age: "Toddler", desc: "Dedicated sensory room, Sheung Wan / Wan Chai.", note: null, link: "https://spring-learning.com.hk/en/" }
+  ];
+
+  var grid = document.getElementById("activity-grid");
+  var countEl = document.getElementById("play-count");
+
+  function cardHTML(a) {
+    var pillClass = a.price === "Free" ? "pill-free" : "pill-paid";
+    var noteHTML = a.note ? '<div class="meta"><span class="badge-verify">verify: ' + a.note + '</span></div>' : "";
+    var linkHTML = a.link ? '<div class="card-link"><a href="' + a.link + '">Official / source ↗</a></div>' : "";
+    return (
+      '<article class="card" data-price="' + a.price + '" data-setting="' + a.setting + '" data-district="' + a.district + '">' +
+      "<h4>" + a.name + "</h4>" +
+      '<div class="meta"><span class="pill ' + pillClass + '">' + a.price + "</span><span>" + a.setting + "</span><span>" + a.district + "</span><span>" + a.age + "</span></div>" +
+      '<p class="desc">' + a.desc + "</p>" +
+      noteHTML +
+      linkHTML +
+      "</article>"
+    );
+  }
+
+  grid.innerHTML = activities.map(cardHTML).join("");
+
+  var filters = { price: "all", setting: "all", district: "all" };
+
+  function applyFilters() {
+    var cards = grid.querySelectorAll(".card");
+    var visible = 0;
+    cards.forEach(function (card) {
+      var matches =
+        (filters.price === "all" || card.getAttribute("data-price") === filters.price) &&
+        (filters.setting === "all" || card.getAttribute("data-setting") === filters.setting) &&
+        (filters.district === "all" || card.getAttribute("data-district") === filters.district);
+      card.style.display = matches ? "" : "none";
+      if (matches) visible += 1;
+    });
+    countEl.textContent = "Showing " + visible + " of " + cards.length + " activities.";
+  }
+
+  var chipGroups = document.querySelectorAll(".chip-group");
+  chipGroups.forEach(function (group) {
+    var groupName = group.getAttribute("data-group");
+    var chips = group.querySelectorAll(".chip");
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+        chip.setAttribute("aria-pressed", "true");
+        filters[groupName] = chip.getAttribute("data-value");
+        applyFilters();
+      });
+    });
+  });
+
+  applyFilters();
+
+  // ---- Timeline "now" marker ----
+  var today = new Date();
+  var items = Array.prototype.slice.call(document.querySelectorAll(".timeline-item"));
+  var parsed = items.map(function (el) {
+    var parts = el.getAttribute("data-date").split("-").map(Number);
+    return { el: el, date: new Date(parts[0], parts[1] - 1, parts[2]) };
+  });
+  var currentIndex = -1;
+  parsed.forEach(function (item, i) {
+    if (item.date <= today) currentIndex = i;
+  });
+  parsed.forEach(function (item, i) {
+    if (i < currentIndex) item.el.classList.add("is-past");
+    else if (i === currentIndex) item.el.classList.add("is-current");
+  });
+})();
+</script>
+</body>
+</html>
