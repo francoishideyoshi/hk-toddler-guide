@@ -1,0 +1,36 @@
+{
+  "_comment": "Curated sources for the weekly auto-updater. `feeds` are RSS/Atom endpoints the GitHub Action parses each week (verified live, no login, no Cloudflare bot-block). `watch` are high-value sources that CANNOT be auto-scraped (login-walled social, or Cloudflare-protected) so they render as a static 'check these yourself' link list. If a weekly run reports a feed dead, move it to watch; promote any watch source that later exposes a working feed.",
+  "recency_days": 60,
+  "max_per_bucket": 10,
+  "feeds": [
+    {
+      "name": "The HK HUB",
+      "url": "https://thehkhub.com/feed/",
+      "lang": "EN",
+      "note": "Weekly 'What's On Families' kids/events roundups plus general HK events."
+    },
+    {
+      "name": "Time Out Hong Kong",
+      "url": "https://www.timeout.com/hong-kong/feed.rss",
+      "lang": "EN",
+      "note": "Things to do this weekend, exhibitions, family attractions."
+    },
+    {
+      "name": "Oh!Pama (Oh!爸媽)",
+      "url": "https://www.ohpama.com/feed/",
+      "lang": "ZH-HANT",
+      "note": "Schooling/parenting portal: kindergarten and admission news, family activities."
+    }
+  ],
+  "watch": [
+    { "name": "Sassy Mama — What's On", "url": "https://www.sassymamahk.com/category/whats-on/", "lang": "EN", "why": "Best EN kids what's-on; Cloudflare blocks bots, read directly." },
+    { "name": "Little Steps — Family Events", "url": "https://www.littlestepsasia.com/hong-kong/events/seasonal-events-guides/family-friendly-events-by-month/", "lang": "EN", "why": "Monthly family events; bot-blocked." },
+    { "name": "HK Kindergarten — Admission Calendar", "url": "https://hkkindergarten.com/admission-calendar/", "lang": "EN/ZH", "why": "KG open days and admission dates calendar; bot-blocked." },
+    { "name": "GetSetParents — Interview Dates", "url": "https://www.getsetparents.com/", "lang": "ZH", "why": "Running list of direct/private school application and interview dates." },
+    { "name": "HK01 親子 — 幼稚園入學", "url": "https://www.hk01.com/channel/393/親子", "lang": "ZH-HANT", "why": "Continuously-updated K1/N-class admission timetables and open days." },
+    { "name": "ParentsDaily — 重要日期一覽表", "url": "https://www.parentsdaily.com.hk/", "lang": "ZH-HANT", "why": "Kindergarten key-dates tables per school year." },
+    { "name": "IG/Threads @littlestepsasia", "url": "https://www.instagram.com/littlestepsasia/", "lang": "EN", "why": "Weekly parenting guide; login-walled, follow directly." },
+    { "name": "IG/Threads @sassymamahk", "url": "https://www.instagram.com/sassymamahk/", "lang": "EN", "why": "Kids activities and events; login-walled." },
+    { "name": "Xiaohongshu — search 香港親子好去處", "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A6%99%E6%B8%AF%E8%A6%AA%E5%AD%90%E5%A5%BD%E5%8E%BB%E8%99%95", "lang": "ZH-HANT", "why": "Real-parent activity tips and venue reviews; login-walled." }
+  ]
+}
