@@ -31,6 +31,11 @@
     { "name": "ParentsDaily — 重要日期一覽表", "url": "https://www.parentsdaily.com.hk/", "lang": "ZH-HANT", "why": "Kindergarten key-dates tables per school year." },
     { "name": "IG/Threads @littlestepsasia", "url": "https://www.instagram.com/littlestepsasia/", "lang": "EN", "why": "Weekly parenting guide; login-walled, follow directly." },
     { "name": "IG/Threads @sassymamahk", "url": "https://www.instagram.com/sassymamahk/", "lang": "EN", "why": "Kids activities and events; login-walled." },
-    { "name": "Xiaohongshu — search 香港親子好去處", "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A6%99%E6%B8%AF%E8%A6%AA%E5%AD%90%E5%A5%BD%E5%8E%BB%E8%99%95", "lang": "ZH-HANT", "why": "Real-parent activity tips and venue reviews; login-walled." }
+    { "name": "Xiaohongshu — search 香港親子好去處", "url": "https://www.xiaohongshu.com/search_result?keyword=%E9%A6%99%E6%B8%AF%E8%A6%AA%E5%AD%90%E5%A5%BD%E5%8E%BB%E8%99%95", "lang": "ZH-HANT", "why": "Real-parent activity tips and venue reviews; login-walled." },
+    { "name": "Kidemy", "url": "https://www.kidemy.hk", "lang": "ZH-HANT", "why": "Kids courses/classes and enrichment listings; JS app, no feed — browse directly." },
+    { "name": "HK Family Fun", "url": "https://hkfamilyfun.com/", "lang": "ZH-HANT", "why": "Family outings and event roundups; Next.js SPA, no feed — browse directly." },
+    { "name": "The Kids Map", "url": "https://thekidsmap.com/", "lang": "ZH-HANT", "why": "Map-based kids venues and events; Next.js SPA, no feed — browse directly." },
+    { "name": "Threads @must.guide", "url": "https://www.threads.net/@must.guide", "lang": "ZH-HANT", "why": "Parenting/what's-on tips; login-walled, follow directly." },
+    { "name": "Threads @happymotherhappybaby", "url": "https://www.threads.net/@happymotherhappybaby", "lang": "ZH-HANT", "why": "Mum-and-baby activity tips; login-walled, follow directly." }
   ]
 }
